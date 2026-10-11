@@ -1,0 +1,86 @@
+/* CuraMeds 3D and Micro-Animations */
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px) rotate3d(1, 1, 0, 0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate3d(1, 1, 0, 2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate3d(1, 1, 0, 0deg);
+  }
+}
+
+@keyframes floatMedicineBox {
+  0% {
+    transform: translateY(0px) rotateY(-5deg) rotateX(8deg);
+  }
+  50% {
+    transform: translateY(-12px) rotateY(4deg) rotateX(12deg);
+  }
+  100% {
+    transform: translateY(0px) rotateY(-5deg) rotateX(8deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 168, 132, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 168, 132, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 168, 132, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-medicine-3d {
+  animation: floatMedicineBox 6s ease-in-out infinite;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2.5s infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* 3D tilt card effect on hover */
+.card-3d {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: var(--shadow-xl);
+}
